@@ -36,7 +36,8 @@ public class ActivityAspect {
 
     @After("execution(* android.view.View.OnClickListener.on**(..))")
     public void onClickMethod(JoinPoint joinPoint) throws Throwable {
-        Log.i(TAG, "aspect:::" + "fileName:" +joinPoint.getSourceLocation().getFileName()
-                + "---line:" + joinPoint.getSourceLocation().getLine());
+        Log.i(TAG, "aspect:::" + "signature:"+ joinPoint.getSignature()
+                + "-----fileName:" +joinPoint.getSourceLocation().getFileName()
+                + "-----line:" + joinPoint.getSourceLocation().getLine());
     }
 }
